@@ -59,14 +59,6 @@ const PokeList = () => {
           </button>
         ))}
       </div>
-      {/* button click to more pokemon */}
-      {/* <button
-        onClick={handleClick}
-        className="flex justify-center items-end gap-[10px] border-[4px] rounded-[15px] px-[20px] py-[10px] m-auto font-bold text-amber-300 border-blue-800 bg-neutral-900"
-      >
-        More Pokemon
-        <span className="loading loading-dots loading-sm"></span>
-      </button> */}
     </div>
   );
 };

@@ -8,7 +8,6 @@ const usePokeList = () => {
   const [error, setError] = useState<null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pokeListPerPage] = useState<number>(100);
-  // const [loadMore, setLoadMore] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,9 +19,6 @@ const usePokeList = () => {
 
         const data = await res.json();
         // console.log(data.results);
-        // console.log(data.next);
-
-        // setLoadMore(data.next);
 
         data.results.forEach(async (pokemon: IPokemon) => {
           const res = await fetch(`${host}/${pokemon.name}`);
@@ -50,21 +46,6 @@ const usePokeList = () => {
 
   // change page
   const pagination = (number: number) => setCurrentPage(number);
-
-  // func onClick set new url for more pokemon
-  // const handleClick = async () => {
-  //   const res = await fetch(loadMore);
-  //   const data = await res.json();
-
-  //   setLoadMore(data.next);
-
-  //   data.results.forEach(async (pokemon: IPokemon) => {
-  //     const res = await fetch(`${host}/${pokemon.name}`);
-  //     const data = await res.json();
-
-  //     setPokeList((poke) => [...poke, data]);
-  //   });
-  // };
 
   return {
     pokeList,
