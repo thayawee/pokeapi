@@ -19,7 +19,7 @@ const PokeList = () => {
     pageNumbers.push(i);
   }
 
-  console.log(pokeList);
+  // console.log(pokeList);
 
   if (loading || !pokeList) return <Loading />;
   if (error) return <p>{error}</p>;
@@ -28,8 +28,8 @@ const PokeList = () => {
     <div className="flex flex-col justify-center items-center gap-[40px]">
       <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-x-[20px] gap-y-[40px]">
         {currentPokeList.map((poke) => (
-          <Link key={poke.id} to={`/pokemon/${poke.name}`}>
-            <div className="flex flex-col justify-between items-center m-auto w-full h-full border-[1px] border-white/20 bg-neutral-900 rounded-[20px] p-[10px] gap-[10px] overflow-hidden">
+          <Link key={poke.id} to={`/${poke.name}`}>
+            <div className="flex flex-col justify-between items-center m-auto w-full h-full border-[1px] border-white/20 bg-neutral-900 hover:bg-neutral-800 rounded-[20px] p-[10px] gap-[10px] overflow-hidden">
               <h1 className="capitalize text-[12px] text-center w-full break-words">
                 &#35;{poke.id}
                 <br></br>
